@@ -1,0 +1,67 @@
+---
+title: "table1 demo - from Pupillometry vs Neurologic Deterioration Analyses"
+author: "Yili Du"
+date: "`r Sys.Date()`"
+output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
+---
+
+# 0-------- set-up
+
+```{r setup, include=FALSE}
+# R Markdown options
+knitr::opts_chunk$set(
+  warning = FALSE,     # Suppress warnings globally
+  message = FALSE,
+  fig.width = 15,       # Set default figure width
+  fig.height = 10,       # Set default figure height
+  dpi = 600     
+)
+
+# set the work directory to the R project folder
+knitr::opts_knit$set(root.dir = "/Users/yilidu/Dropbox/61-Yili/2-Code/table1")
+
+# install libraries
+#install.packages("readr")
+#install.packages("kableExtra")
+
+# Load the package
+library(readr) # read csv file
+library(tidyverse) #include dplyr, tidyr, ggplot2
+library(kableExtra) # to use function "add_indent" 
+
+```
+
+# 1-------- descriptive statistics
+
+## Table 1: Baseline Table
+
+### import related dataset
+```{r, include=FALSE}
+# load in raw data
+redcap<-read_csv("data/redcap_02-05-2025.csv")
+# load in baseline data
+otv<-read_csv("data/baseline_02-05-2025.csv")
+
+```
+
+### load baseline table generating functions
+```{r, include=FALSE}
+# load the table formatting code from Ong Lab's github
+source("https://raw.githubusercontent.com/The-Ong-Lab/DescriptiveTable/main/Table%20Formatting%20Functions.R",
+       local = knitr::knit_global()) #custom table functions
+```
+
+### generate the customized baseline table
+```{r, include=TRUE}
+options(knitr.kable.NA = '') # display NA as blank in the generated table
+
+# initiate the table generation
+source("helpers/baseline_table_demo.R",
+       local = T)
+
+#print the table 1
+baseline_tbl_html
+```
