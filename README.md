@@ -25,7 +25,3 @@ Before generating the table, ensure you have the following R packages installed:
 -   `readr` (for reading CSV files)
 -   `tidyverse` (includes dplyr, tidyr, ggplot2, etc.)
 -   `kableExtra` (for advanced table formatting functions such as `add_indent`)
-
-You can install these packages by running:
-
-\`\`\`r install.packages(c("readr", "tidyverse", "kableExtra"))
