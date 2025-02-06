@@ -1,4 +1,6 @@
-``` markdown
+```` markdown
+
+```
 # Table 1 Generation for Pupillometry vs Neurologic Deterioration Analyses
 
 This repository contains the R Markdown file and supporting scripts needed to generate the baseline Table 1 for the "Pupillometry vs Neurologic Deterioration Analyses" project.
@@ -30,7 +32,7 @@ You can install these packages by running:
 
 ```r
 install.packages(c("readr", "tidyverse", "kableExtra"))
-```
+````
 
 ## How to Generate Table 1
 
